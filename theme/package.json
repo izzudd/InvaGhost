@@ -11,10 +11,13 @@
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
-        "dev": "rollup -c --environment BUILD:development -w",
-        "build": "rollup -c --environment BUILD:production",
+        "ghost:setup": "node setup-ghost.js",
+        "ghost:start": "cd ../.ghost; ghost start",
+        "ghost:stop": "cd ../.ghost; ghost stop",
+        "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --watch\"",
+        "build": "concurrently \"rollup -c --environment BUILD:production\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --minify\"",        
         "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
-        "test": "npx gscan .",
+        "test": "gscan .",
         "pretest": "npm run build"
     },
     "author": {
@@ -47,13 +50,19 @@
         "@rollup/plugin-commonjs": "^25.0.0",
         "@rollup/plugin-node-resolve": "^15.0.1",
         "@rollup/plugin-terser": "^0.4.0",
+        "@tailwindcss/typography": "^0.5.15",
+        "alpinejs": "^3.14.3",
         "bestzip": "^2.2.1",
+        "concurrently": "^9.0.1",
+        "ghost-cli": "^1.26.1",
+        "gscan": "^4.44.0",
         "postcss": "^8.4.24",
         "postcss-import": "^15.1.0",
         "postcss-preset-env": "^8.0.1",
         "rollup": "^3.18.0",
         "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-postcss": "^4.0.2"
+        "rollup-plugin-postcss": "^4.0.2",
+        "tailwindcss": "^3.4.14"
     },
     "browserslist": [
         "defaults"
