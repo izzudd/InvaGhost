@@ -1,13 +1,15 @@
+{{#match pages ">" 1}}
 <nav class="flex justify-between mt-8" role="navigation">
   <div class="flex-1">
     {{#if prev}}
       <a class="newer-posts" href="{{page_url prev}}">&larr; Lebih baru</a>
     {{/if}}
   </div>
-  <span class="page-number">{{page}} dari {{pages}}</span>
+  <span class="page-number">Halaman {{page}} dari {{pages}}</span>
   <div class="flex-1">
     {{#if next}}
-      <a class="older-posts float-end" href="{{page_url next}}">Lebih lawas &rarr;</a>
+      <a class="older-posts float-end" href="{{page_url next}}">Lebih lama &rarr;</a>
     {{/if}}
   </div>
 </nav>
+{{/match}}

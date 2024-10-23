@@ -10,7 +10,7 @@
             {{img_url feature_image size="m" format="avif"}} 600w,
             {{img_url feature_image size="l" format="avif"}} 1200w,
             {{img_url feature_image size="xl" format="avif"}} 2000w"
-          sizes="(min-width: 1200px) 1200px, 100vw)"
+          sizes="(max-width: 768px) 100vw, 65ch"
           loading="lazy"
           type="image/avif"
         >
@@ -22,7 +22,7 @@
             {{img_url feature_image size="m" format="webp"}} 600w,
             {{img_url feature_image size="l" format="webp"}} 1200w,
             {{img_url feature_image size="xl" format="webp"}} 2000w"
-          sizes="(min-width: 1200px) 1200px, 100vw)"
+          sizes="(max-width: 768px) 100vw, 65ch"
           loading="lazy"
           type="image/webp"
         >
@@ -34,7 +34,7 @@
             {{img_url feature_image size="m"}} 600w,
             {{img_url feature_image size="l"}} 1200w,
             {{img_url feature_image size="xl"}} 2000w"
-          sizes="(min-width: 1200px) 1200px, 100vw)"
+          sizes="(max-width: 768px) 100vw, 65ch"
           loading="lazy"
           src="{{img_url feature_image size="m"}}"
           alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
@@ -43,7 +43,7 @@
       </picture>
     {{/if}}
     <div class="p-8 flex-shrink">
-      <h2 class="text-3xl font-bold mb-2 group-hover:underline" style="text-decoration-color: {{primary_tag.accent_color}};">{{title}}</h2>
+      <h3 class="text-3xl font-bold mb-2 group-hover:underline" style="text-decoration-color: {{primary_tag.accent_color}};">{{title}}</h3>
       <p class="text-sm font-medium opacity-50 mb-4">{{excerpt characters="175"}}...</p>
       <div class="text-sm opacity-50">
         <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D MMMM YYYY" locale="id_ID"}}</time>

@@ -1,95 +1,96 @@
 {
-    "name": "ghost-starter-theme",
-    "description": "A starter theme for Ghost theme development",
-    "demo": "https://starter.ghost.io",
-    "version": "1.0.0",
-    "engines": {
-        "ghost": ">=5.0.0"
-    },
-    "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg"
-    },
-    "scripts": {
-        "ghost:setup": "node setup-ghost.js",
-        "ghost:start": "cd ../.ghost; ghost start",
-        "ghost:stop": "cd ../.ghost; ghost stop",
-        "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --watch\"",
-        "build": "concurrently \"rollup -c --environment BUILD:production\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --minify\"",        
-        "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
-        "test": "gscan .",
-        "pretest": "npm run build"
-    },
-    "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
-    },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
-    "devDependencies": {
-        "@babel/core": "^7.21.0",
-        "@babel/preset-env": "^7.20.2",
-        "@rollup/plugin-babel": "^6.0.3",
-        "@rollup/plugin-commonjs": "^25.0.0",
-        "@rollup/plugin-node-resolve": "^15.0.1",
-        "@rollup/plugin-terser": "^0.4.0",
-        "@tailwindcss/typography": "^0.5.15",
-        "alpinejs": "^3.14.3",
-        "bestzip": "^2.2.1",
-        "concurrently": "^9.0.1",
-        "ghost-cli": "^1.26.1",
-        "gscan": "^4.44.0",
-        "postcss": "^8.4.24",
-        "postcss-import": "^15.1.0",
-        "postcss-preset-env": "^8.0.1",
-        "rollup": "^3.18.0",
-        "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-postcss": "^4.0.2",
-        "tailwindcss": "^3.4.14"
-    },
-    "browserslist": [
-        "defaults"
-    ],
-    "config": {
-        "card_assets": true,
-        "posts_per_page": 15,
-        "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
-            "s": {
-                "width": 300
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 1200
-            },
-            "xl": {
-                "width": 2000
-            }
-        }
-    },
-    "type": "module"
+  "name": "inva",
+  "description": "Minimal ghost theme for blogging site, designed specifically for Inva",
+  "demo": "https://invasi.dev",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg"
+  },
+  "scripts": {
+    "ghost:setup": "node setup-ghost.js",
+    "ghost:start": "cd ../.ghost; ghost start",
+    "ghost:stop": "cd ../.ghost; ghost stop",
+    "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --watch\"",
+    "build": "concurrently \"rollup -c --environment BUILD:production\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --minify\"",
+    "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
+    "test": "gscan .",
+    "pretest": "npm run build"
+  },
+  "author": {
+    "name": "Daffa Izzuddin",
+    "email": "author@invasi.dev",
+    "url": "https://izzudd@invasikode.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine",
+      "Blog"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/izzudd/InvaGhostTheme.git"
+  },
+  "bugs": "https://github.com/izzudd/InvaGhostTheme/issues",
+  "contributors": "https://github.com/izzudd/InvaGhostTheme/graphs/contributors",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "alpinejs": "^3.14.3",
+    "bestzip": "^2.2.1",
+    "concurrently": "^9.0.1",
+    "ghost-cli": "^1.26.1",
+    "gscan": "^4.44.0",
+    "postcss": "^8.4.24",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^8.0.1",
+    "rollup": "^3.18.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwindcss": "^3.4.14"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "config": {
+    "card_assets": true,
+    "posts_per_page": 16,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  },
+  "type": "module"
 }
