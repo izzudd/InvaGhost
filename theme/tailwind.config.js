@@ -2,6 +2,13 @@
 export default {
   content: ['./*.hbs', './partials/**/*.hbs'],
   theme: {
+    container: {
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px'
+      }
+    },
     extend: {
       colors: {
         'text': 'var(--text)',

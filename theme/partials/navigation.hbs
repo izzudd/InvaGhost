@@ -1,5 +1,7 @@
 <ul class="flex gap-4">
   {{#foreach navigation}}
-    <li class="{{#if current}}font-bold{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+    <li class="{{#if current}}underline{{/if}}">
+      <a href="{{url absolute="true"}}" class="text-nowrap font-semibold text-sm">{{label}}</a>
+    </li>
   {{/foreach}}
 </ul>

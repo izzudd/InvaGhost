@@ -15,44 +15,33 @@
 
 <body class="{{body_class}}">
   <header id="gh-head" class="py-4 bg-white border-b border-border">
-    <nav class="container mx-auto px-2 flex justify-between items-center">
+    <div class="px-4 flex justify-between items-center">
       <a href="{{@site.url}}">
         {{#if @site.logo}}
-        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+          <img src="{{@site.logo}}" alt="{{@site.title}}" />
         {{else}}
-        <span class="text-2xl font-bold">{{@site.title}}</span>
+          <span class="text-2xl font-bold">{{@site.title}}</span>
         {{/if}}
       </a>
 
       <div class="flex gap-4 items-center">
-        {{navigation}}
+        <nav class="hidden md:block">{{navigation}}</nav>
         {{search}}
       </div>
-
-      {{!-- TODO: Add subscribe button --}}
-      {{!-- {{#if @site.members_enabled}}
-      {{#if @member}}
-      <a class="gh-button" href="#/portal/account">Account</a>
-      {{else}}
-      <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
-      {{/if}}
-      {{/if}} --}}
-    </nav>
+    </div>
+    <nav class="md:hidden mt-6 overflow-x-scroll px-2 w-fit mx-auto">{{navigation}}</nav>
   </header>
 
-  <main class="mt-8 container max-w-screen-lg mx-auto px-2">
+  <main class="my-8 container mx-auto px-4">
     {{{body}}}
   </main>
 
-  <footer>
-    <div class="container mx-auto px-2">
-      <div class="gh-foot-menu">
-        {{navigation type="secondary"}}
-      </div>
-      <div class="gh-foot-meta">
-        Published with
-        <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-      </div>
+  <footer class="text-background bg-text py-4 px-4 flex flex-col items-center lg:flex-row lg:items-end justify-between">
+    <div class="max-w-96">
+      {{navigation type="secondary"}}
+    </div>
+    <div class="opacity-60 font-semibold lg:text-sm">
+      Dibuat dengan ☕ dan ❤ oleh <a href="https://izzudd.invasikode.com" target="_blank" rel="noopener" class="hover:underline">Izzudd</a>
     </div>
   </footer>
 

@@ -6,7 +6,7 @@
   <article class="{{post_class}}">
     <header class="not-prose">
       <div class="text-sm mb-4 flex justify-between">
-        <span class="font-semibold">Ditulis oleh {{#foreach authors}}<a href="{{url}}" class="hover:underline">{{name}}</a>{{/foreach}}</span>
+        <span class="font-semibold">Ditulis oleh {{#foreach authors}}<a href="{{url}}" class="underline">{{name}}</a>{{/foreach}}</span>
         <span class="opacity-50">
           <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D MMMM YYYY" locale="id_ID"}}</time>
           <span class="bull">&bull;</span> {{reading_time minute="Artikel singkat" minutes="Baca % menit"}}</span>
