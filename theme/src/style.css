@@ -9,16 +9,14 @@
     --text: #090101;
     --background: #F5F7F9;
     --primary: #000000;
-    --secondary: #f4e376;
-    --accent: #5196ec;
+    --accent: var(--ghost-accent-color);
     --border: #DFE3E9;
   }
   .dark {
     --text: #fef6f6;
     --background: #040101;
     --primary: #ffffff;
-    --secondary: #89780b;
-    --accent: #1359ae;
+    --accent: var(--ghost-accent-color);
     --border: #1a1a1a;
   }
 }
@@ -40,4 +38,15 @@ body, html {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+}
+
+form {
+  .loading, .success, .error  {
+    @apply mt-4;
+    display: none;
+  }
+  
+  &.loading .loading, &.success .success, &.error .error {
+    display: block;
+  }
 }

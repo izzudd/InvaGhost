@@ -10,6 +10,9 @@
     {{pagination}}
   </div>
   <aside class="mt-8 lg:mt-0 min-w-80">
+    <div class="mb-8">
+      {{> components/subscribe-form}}
+    </div> 
     {{#get "posts" filter="featured:true" limit="all" as | featured|}}
       {{#if featured}}
         <section>
