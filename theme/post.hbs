@@ -4,17 +4,17 @@
 
 <div class="prose prose-lg mx-auto">
   <article class="{{post_class}}">
-    <header class="not-prose">
+    <header class="not-prose mb-8">
       <div class="text-sm mb-4 flex justify-between flex-wrap">
         <span class="font-semibold">Ditulis oleh {{#foreach authors}}<a href="{{url}}" class="underline">{{name}}</a>{{/foreach}}</span>
-        <span class="opacity-50">
+        <span class="opacity-70">
           <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D MMMM YYYY" locale="id_ID"}}</time>
           <span class="bull">&bull;</span> {{reading_time minute="Artikel singkat" minutes="Baca % menit"}}</span>
         </span>
       </div>
       <h1 class="font-bold text-4xl">{{title}}</h1>
       {{#if custom_excerpt}}
-        <p class="font-semibold text-xl opacity-60 my-2">{{custom_excerpt}}</p>
+        <p class="font-semibold text-xl opacity-80 my-2">{{custom_excerpt}}</p>
       {{/if}}
 
       {{#if feature_image}}
@@ -42,7 +42,7 @@
 
   <aside class="not-prose mt-8 pt-8 border-t border-border">
     <h4 class="text-xs font-semibold uppercase mb-4">Rekomendasi</h4>
-    <div class="flex flex-col md:flex-row gap-4 ">
+    <div class="grid md:grid-cols-2 gap-4">
       {{#next_post}}{{> components/post-card}}{{/next_post}}
       {{#prev_post}}{{> components/post-card}}{{/prev_post}}
     </div>

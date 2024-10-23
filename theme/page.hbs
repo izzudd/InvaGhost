@@ -3,10 +3,10 @@
 {{#post}}
 <article class="{{post_class}} prose prose-lg mx-auto">
   {{#match @page.show_title_and_feature_image}}
-    <header class="not-prose">
+    <header class="not-prose mb-8">
       <h1 class="font-bold text-4xl">{{title}}</h1>
       {{#if custom_excerpt}}
-        <p class="font-semibold text-xl opacity-60 my-2">{{custom_excerpt}}</p>
+        <p class="font-semibold text-xl opacity-80 my-2">{{custom_excerpt}}</p>
       {{/if}}
 
       {{#if feature_image}}

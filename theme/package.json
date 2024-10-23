@@ -55,6 +55,7 @@
     "alpinejs": "^3.14.3",
     "bestzip": "^2.2.1",
     "concurrently": "^9.0.1",
+    "cowsay": "^1.6.0",
     "ghost-cli": "^1.26.1",
     "gscan": "^4.44.0",
     "postcss": "^8.4.24",
