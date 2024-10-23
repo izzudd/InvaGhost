@@ -1,0 +1,29 @@
+<article class="{{post_class}} rounded p-6 border border-border bg-white">
+  <a href="{{url}}" class="flex gap-4 items-center">
+    <div>
+      <h2 class="text-sm line-clamp-2 font-semibold">{{title}}</h2>
+      <time class="text-xs mt-2 block opacity-50" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+    </div>
+    {{#if feature_image}}
+      <picture class="flex-shrink-0">
+        <source 
+          srcset="{{img_url feature_image size="xs" format="avif"}}"
+          loading="lazy"
+          type="image/avif"
+        >
+        <source 
+          srcset="{{img_url feature_image size="xs" format="webp"}}"
+          loading="lazy"
+          type="image/webp"
+        >
+        <img
+          srcset="{{img_url feature_image size="xs"}}"
+          loading="lazy"
+          src="{{img_url feature_image size="xs"}}"
+          alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+          class="rounded aspect-square object-cover w-16"
+        >
+      </picture>
+    {{/if}}
+  </a>
+</article>

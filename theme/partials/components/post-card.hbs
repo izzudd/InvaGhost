@@ -1,0 +1,61 @@
+<article class="{{post_class}} bg-white">
+  <a class="group block h-full rounded overflow-hidden border border-border" href="{{url}}">
+    {{#if feature_image}}
+      <picture>
+        <source 
+          srcset="
+            {{img_url feature_image size="xxs" format="avif"}} 30w,
+            {{img_url feature_image size="xs" format="avif"}} 100w,
+            {{img_url feature_image size="s" format="avif"}} 300w,
+            {{img_url feature_image size="m" format="avif"}} 600w,
+            {{img_url feature_image size="l" format="avif"}} 1200w,
+            {{img_url feature_image size="xl" format="avif"}} 2000w"
+          sizes="(min-width: 1200px) 1200px, 100vw)"
+          loading="lazy"
+          type="image/avif"
+        >
+        <source 
+          srcset="
+            {{img_url feature_image size="xxs" format="webp"}} 30w,
+            {{img_url feature_image size="xs" format="webp"}} 100w,
+            {{img_url feature_image size="s" format="webp"}} 300w,
+            {{img_url feature_image size="m" format="webp"}} 600w,
+            {{img_url feature_image size="l" format="webp"}} 1200w,
+            {{img_url feature_image size="xl" format="webp"}} 2000w"
+          sizes="(min-width: 1200px) 1200px, 100vw)"
+          loading="lazy"
+          type="image/webp"
+        >
+        <img
+          srcset="
+            {{img_url feature_image size="xxs"}} 30w,
+            {{img_url feature_image size="xs"}} 100w,
+            {{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 600w,
+            {{img_url feature_image size="l"}} 1200w,
+            {{img_url feature_image size="xl"}} 2000w"
+          sizes="(min-width: 1200px) 1200px, 100vw)"
+          loading="lazy"
+          src="{{img_url feature_image size="m"}}"
+          alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+          class="aspect-video object-cover w-full"
+        >
+      </picture>
+    {{/if}}
+    <div class="p-8 flex-shrink">
+      <h2 class="text-3xl font-bold mb-2 group-hover:underline" style="text-decoration-color: {{primary_tag.accent_color}};">{{title}}</h2>
+      <p class="text-sm font-medium opacity-50 mb-4">{{excerpt characters="175"}}...</p>
+      <div class="flex justify-between text-sm opacity-50">
+        <div class="flex items-center gap-1 w-fit">
+          {{#if primary_tag}}
+            <span>#{{primary_tag.name}}</span>
+          {{/if}}
+        </div>
+        <div>
+          <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D MMMM YYYY" locale="id_ID"}}</time>
+          <span class="bull">&bull;</span> {{reading_time minute="Artikel singkat" minutes="Baca % menit"}}</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</article>

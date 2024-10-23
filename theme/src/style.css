@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --text: #090101;
+    --background: #F5F7F9;
+    --primary: #000000;
+    --secondary: #f4e376;
+    --accent: #5196ec;
+    --border: #DFE3E9;
+  }
+  .dark {
+    --text: #fef6f6;
+    --background: #040101;
+    --primary: #ffffff;
+    --secondary: #89780b;
+    --accent: #1359ae;
+    --border: #1a1a1a;
+  }
+}
+
+body, html {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+.kg-width-wide {
+  width: 100%;
+}
+
+.kg-width-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}

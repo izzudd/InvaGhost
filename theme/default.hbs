@@ -1,63 +1,63 @@
+<!DOCTYPE html>
 <html lang="{{@site.locale}}">
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{{asset 'style.css'}}" />
-    <script src="{{asset 'script.js'}}" defer></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{asset 'style.css'}}" />
+  <script src="{{asset 'script.js'}}" defer></script>
 
-    <title>{{meta_title}}</title>
+  <title>{{meta_title}}</title>
 
-    {{ghost_head}}
-  </head>
+  {{!-- Outputs important scripts and metadata - should always be included inside the head tag --}}
+  {{ghost_head}} 
+</head>
 
-  <body class="{{body_class}}">
-    <header id="gh-head" class="py-4">
-      <nav class="container mx-auto px-2 flex justify-between items-center">
-        <a href="{{@site.url}}">
-          {{#if @site.logo}}
-            <img src="{{@site.logo}}" alt="{{@site.title}}" />
-          {{else}}
-            <span class="text-2xl font-bold">{{@site.title}}</span>
-          {{/if}}
-        </a>
+<body class="{{body_class}}">
+  <header id="gh-head" class="py-4 bg-white border-b border-border">
+    <nav class="container mx-auto px-2 flex justify-between items-center">
+      <a href="{{@site.url}}">
+        {{#if @site.logo}}
+        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+        {{else}}
+        <span class="text-2xl font-bold">{{@site.title}}</span>
+        {{/if}}
+      </a>
 
-        <div class="flex gap-4 items-center">
-          {{navigation}}
-          {{search}}
-        </div>
-
-        {{!-- TODO: Add subscribe button --}}
-        {{!-- {{#if @site.members_enabled}}
-          {{#if @member}}
-            <a class="gh-button" href="#/portal/account">Account</a>
-          {{else}}
-            <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
-          {{/if}}
-        {{/if}} --}}
-      </nav>
-    </header>
-
-    <main class="container mx-auto px-2">
-      {{{body}}}
-    </main>
-
-    <footer>
-      <div class="container mx-auto px-2">
-        <div class="gh-foot-menu">
-          {{navigation type="secondary"}}
-        </div>
-        <div class="gh-foot-meta">
-          Published with
-          <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
+      <div class="flex gap-4 items-center">
+        {{navigation}}
+        {{search}}
       </div>
-    </footer>
 
-    {{! <foot> }}
-    {{ghost_foot}}
-    {{! Outputs important scripts - should always be included before closing body tag }}
+      {{!-- TODO: Add subscribe button --}}
+      {{!-- {{#if @site.members_enabled}}
+      {{#if @member}}
+      <a class="gh-button" href="#/portal/account">Account</a>
+      {{else}}
+      <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
+      {{/if}}
+      {{/if}} --}}
+    </nav>
+  </header>
 
-  </body>
+  <main class="mt-8 container max-w-screen-lg mx-auto px-2">
+    {{{body}}}
+  </main>
+
+  <footer>
+    <div class="container mx-auto px-2">
+      <div class="gh-foot-menu">
+        {{navigation type="secondary"}}
+      </div>
+      <div class="gh-foot-meta">
+        Published with
+        <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+      </div>
+    </div>
+  </footer>
+
+  {{! Outputs important scripts - should always be included before closing body tag }}
+  {{ghost_foot}}
+</body>
 
 </html>
