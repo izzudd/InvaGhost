@@ -1,14 +1,14 @@
-<form data-members-form="subscribe" class="block rounded bg-text text-background p-6">
-  <h4 class="font-bold text-3xl mb-2">📫 Nawala</h4>
-  <p class="text-sm font-semibold mb-6">Dapatkan Info Terbaru dari Inva, dikirim langsung ke surel kamu!</p>
-  <label>
-    <input data-members-name class="p-2 w-full bg-background text-text rounded mb-4" placeholder="Nama (opsional)" />
-  </label>
-  <label>
-    <input data-members-email class="p-2 w-full bg-background text-text rounded mb-4" type="email" placeholder="Email" required />
-  </label>
-  <button type="submit" class="p-2 w-full bg-accent rounded font-semibold text-sm">Langganan</button>
-  <div class="loading">⏳ Mohon tunggu sebentar</div>
-  <div class="error">❗Terjadi kesalahan. Silakan coba lagi</div>
-  <div class="success">🔥 Sukses! Periksa kotak masuk surel Anda</div>
+<form data-members-form="subscribe" class="rounded bg-text text-background p-6 flex gap-6 flex-wrap">
+  <div class="flex-1">
+    <h4 class="font-bold text-3xl mb-2">📫 Nawala</h4>
+    <p class="text-sm font-semibold">Dapatkan Info Terbaru dari Inva, dikirim langsung ke surel kamu!</p>
+  </div>
+  <div class="text-sm flex flex-col items-center justify-stretch gap-4 min-w-64 w-full flex-1">
+    <input data-members-name class="p-2 w-full bg-background text-text rounded" placeholder="Nama (opsional)" />
+    <input data-members-email class="p-2 w-full bg-background text-text rounded" type="email" placeholder="Email" required />
+    <button type="submit" class="p-2 w-full bg-accent rounded font-semibold">Langganan</button>
+    <div class="loading">⏳ Mohon tunggu sebentar</div>
+    <div class="error">❗Terjadi kesalahan. Silakan coba lagi</div>
+    <div class="success">🔥 Sukses! Periksa kotak masuk surel Anda</div>
+  </div>
 </form>
