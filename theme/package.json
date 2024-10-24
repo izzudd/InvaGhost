@@ -16,9 +16,9 @@
     "ghost:stop": "cd ../.ghost; ghost stop",
     "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --watch\"",
     "build": "concurrently \"rollup -c --environment BUILD:production\" \"tailwindcss -i ./src/style.css -o ./assets/style.css --minify\"",
-    "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
+    "zip": "yarn build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
     "test": "gscan .",
-    "pretest": "npm run build"
+    "pretest": "yarn build"
   },
   "author": {
     "name": "Daffa Izzuddin",
@@ -52,15 +52,11 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
     "@tailwindcss/typography": "^0.5.15",
-    "alpinejs": "^3.14.3",
     "bestzip": "^2.2.1",
     "concurrently": "^9.0.1",
     "cowsay": "^1.6.0",
     "ghost-cli": "^1.26.1",
     "gscan": "^4.44.0",
-    "postcss": "^8.4.24",
-    "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^8.0.1",
     "rollup": "^3.18.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
