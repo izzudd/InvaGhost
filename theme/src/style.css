@@ -48,3 +48,15 @@ form {
     display: block;
   }
 }
+
+.prose pre {
+  padding: 1.5rem;
+
+  &:has(> code.hljs) {
+    padding: 0;
+  }
+
+  code.hljs {
+    padding: 1.5rem !important;
+  }
+}
