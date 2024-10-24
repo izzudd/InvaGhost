@@ -24,4 +24,4 @@ projectFilesBackup
 dist/
 
 .ghost
-assets
+generated

@@ -3,11 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{asset 'style.css'}}" />
-  <script src="{{asset 'script.js'}}" defer></script>
-
+  <style>{{> "generated/style"}}</style>
   <title>{{meta_title}}</title>
-
   {{ghost_head}}
 </head>
 
@@ -16,6 +13,7 @@
     <pre id="error__alert"></pre>
     <a class="hover:underline font-mono" href="{{@site.url}}"><< Klik di sini >></a>
   </div>
+  <script>{{> "generated/script"}}</script>
   {{ghost_foot}}
 </body>
 </html>

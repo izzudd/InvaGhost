@@ -14,24 +14,24 @@ import livereload from 'rollup-plugin-livereload';
 
 // Rollup configuration
 export default defineConfig({
-    input: 'src/script.js',
-    output: {
-        dir: "assets",
-        format: 'iife',
-        plugins: [isProduction() && terser()]
-    },
-    plugins: [
-        commonjs(), 
-        nodeResolve(), 
-        babel({ babelHelpers: 'bundled' }),
-        !isProduction() && livereload({
-            watch: resolve('.'),
-            extraExts: ['hbs'],
-            exclusions: [resolve('node_modules')]
-        }),
-    ]
+  input: 'src/script.js',
+  output: {
+    file: "partials/generated/script.hbs",
+    format: 'iife',
+    plugins: [isProduction() && terser()]
+  },
+  plugins: [
+    commonjs(), 
+    nodeResolve(), 
+    babel({ babelHelpers: 'bundled' }),
+    !isProduction() && livereload({
+      watch: resolve('.'),
+      extraExts: ['hbs'],
+      exclusions: [resolve('node_modules')]
+    }),
+  ]
 })
 
 function isProduction() {
-    return process.env.BUILD === "production";
+  return process.env.BUILD === "production";
 }
