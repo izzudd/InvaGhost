@@ -16,7 +16,7 @@
     "ghost:stop": "cd ../.ghost; ghost stop",
     "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"tailwindcss -i ./src/style.css -o ./partials/generated/style.hbs --watch\"",
     "build": "concurrently \"rollup -c --environment BUILD:production\" \"tailwindcss -i ./src/style.css -o ./partials/generated/style.hbs --minify\"",
-    "zip": "yarn build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
+    "zip": "yarn build && bestzip $npm_package_name.zip 'assets/*' 'partials/*' 'members/*' '*.hbs' package.json",
     "test": "gscan .",
     "pretest": "yarn build"
   },
